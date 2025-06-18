@@ -14,7 +14,14 @@ export default function patch(oldVnode, newVnode) {
   }
   // 判断oldVnode和newVnode是不是同一个节点
   if (oldVnode['sel'] === newVnode['sel'] && oldVnode['data']['key'] === newVnode['data']['key']) {
+    console.log('>>>>> file: patch.js ~ method: patch <<<<<\n', '是同一个节点')
   } else {
-    createElement(newVnode, oldVnode['elm'])
+    let newVnodeElm = createElement(newVnode)
+    // 插入到老节点之前
+    if (oldVnode.elm.parentNode && newVnodeElm) {
+      oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
+    }
+    // 删除老节点
+    oldVnode.elm.parentNode.removeChild(oldVnode.elm)
   }
 }

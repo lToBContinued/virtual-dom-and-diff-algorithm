@@ -5,7 +5,7 @@
  * @param {array | undefined} children 子节点
  * @param {string | undefined} text 文本
  * @param {Element | Text | undefined} elm 元素
- * @returns {object} vnode 对象
+ * @returns {object} 虚拟节点
  */
 export default function (sel, data, children, text, elm) {
   return { sel, data, children, text, elm }

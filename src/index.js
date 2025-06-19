@@ -2,13 +2,13 @@ import h from './mysnabbdom/h.js'
 import patch from './mysnabbdom/patch.js'
 
 const container = document.getElementById('container')
-let myVnode1 = h('div', { key: 'A' }, [h('p', {}, 'A'), h('p', {}, 'B'), h('p', {}, 'C'), h('p', {}, 'D')])
-// myVnode1 = h('h1', { key: 'A' }, '你好')
-console.log('>>>>> file: index.js ~ method:  <<<<<\n', myVnode1)
-patch(container, myVnode1)
-
-let myVnode2 = h('section', {}, [h('h1', {}, '我是新的h1'), h('h1', {}, '我是新的h2')])
 const btn = document.getElementById('btn')
+
+let myVnode1 = h('section', {}, '我是老DOM，我就是一个破文字，我没有子节点')
+// 第一次上树
+patch(container, myVnode1)
+// 新节点
+let myVnode2 = h('section', {}, [h('p', {}, 'A'), h('p', {}, 'B'), h('p', {}, 'C')])
 btn.onclick = () => {
   patch(myVnode1, myVnode2)
 }

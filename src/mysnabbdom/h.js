@@ -7,8 +7,8 @@ import vnode from './vnode.js'
  * 形态②：h('div', {}, [])
  * 形态③：h('div', {}, h())
  * @param {string} sel 标签名
- * @param {object} data 标签名
- * @param {string | array | function} c 标签名
+ * @param {object} data 属性对象
+ * @param {string | array | function} c 文字或子元素或h()函数
  */
 export default function (sel, data, c) {
   // 检查参数格式

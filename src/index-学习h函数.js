@@ -31,7 +31,6 @@ const myVnode2 = h(
 )
 
 const myVnode3 = h('ul', [h('li', '西瓜'), h('li', '苹果'), h('li', [h('div', [h('p', '哈哈'), h('p', 'xixi')])])])
-console.log('>>>>> file: index.js ~ method:  <<<<<\n', myVnode3)
 // 让虚拟节点上树
 const container = document.getElementById('container')
 patch(container, myVnode3)

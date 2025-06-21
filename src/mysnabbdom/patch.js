@@ -15,6 +15,8 @@ export default function patch(oldVnode, newVnode) {
   }
   // 判断oldVnode和newVnode是不是同一个节点
   if (oldVnode['sel'] === newVnode['sel'] && oldVnode['data']['key'] === newVnode['data']['key']) {
+    // 新老节点是同一个节点的情况下：
+    newVnode.elm = createElement(newVnode)
     patchVNode(oldVnode, newVnode)
   } else {
     // 新老节点不是同一个节点的情况下：

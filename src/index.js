@@ -14,7 +14,14 @@ let myVnode1 = h('ul', {}, [
 // 第一次上树
 patch(container, myVnode1)
 // 新节点
-let myVnode2 = h('ul', {}, [h('li', { key: 'A' }, 'A'), h('li', { key: 'B' }, 'B'), h('li', { key: 'E' }, 'E')])
+let myVnode2 = h('ul', {}, [
+  h('li', { key: 'A' }, 'A'),
+  h('li', { key: 'B' }, 'B'),
+  h('li', { key: 'C' }, 'C'),
+  h('li', { key: 'D' }, 'D'),
+  h('li', { key: 'Q' }, 'Q'),
+  h('li', { key: 'E' }, 'E'),
+])
 btn.onclick = () => {
   patch(myVnode1, myVnode2)
 }
